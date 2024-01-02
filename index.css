@@ -1,0 +1,37 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+h1{
+    color: blue;
+    
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#class{
+    background-color: #000000;
+   min-height: 400vh;
+   max-width: 100%;
+   position: relative;
+   display: flex;
+
+}
+
+.container {
+    flex: 1;
+    justify-content: center;
+    background-color: whitesmoke;
+    border: 3px solid black;
+    text-align: center;
+    margin: 15px;
+    height: fit-content;
+    box-shadow:10px 10px cadetblue;
+}
+
+
+
+
+

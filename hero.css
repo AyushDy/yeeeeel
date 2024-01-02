@@ -1,0 +1,63 @@
+#hero {
+    background-color: #0A0a0a;
+    background-image: url('https://cdn.dribbble.com/users/1139271/screenshots/3111447/3.gif');
+   background-size:cover;
+    background-position: top center;
+    position: relative;
+}
+#hero .hero{
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 0 50px;
+    font-family: monospace;
+}
+#hero h1{
+    font-size: 4rem;
+    font-weight: 10;
+    position: relative;
+    color: #909090;
+}
+
+
+
+#hero p{
+    font-size: 3rem;
+    display: block;
+    flex-direction: column;
+    color: #909090;
+}
+
+/* reveal animation */
+.reveal{
+    position: relative;
+    transform: translateY(250px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+.reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* hover animation */
+
+.fa::before {  
+    transform: scaleX(0);
+    transform-origin: bottom right;
+  }
+  
+  .fa:hover::before {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+  .fa::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    inset: 0 0 0 0;
+    background: #1f1f1f;
+    z-index: -1;
+    transition: transform .3s ease;
+  }

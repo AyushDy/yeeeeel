@@ -1,0 +1,85 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 10px;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: name;
+}
+.container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+p {
+    color:purple;
+    margin: 10px;
+    text-align: center;
+    
+}
+.section-title {
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-align: center;
+}
+
+.cta {
+    display: inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid #505050;
+    font-size: 2rem;
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-top: 3px;
+    margin-left: 15px;
+}
+
+.cta:hover {
+    color: white;
+    background-color: #505050;
+}
+
+#achievements .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#achievements{
+    display: flex;
+    flex-direction: column;
+    background-color: #0A0a0a;
+    color: white;
+}
+
+.achievements-content{
+    padding: 20px;
+    font-size:500%;
+    color: #505050;
+}
+#h111{
+    text-align: center;
+    font-size: 500%;
+    margin-top: 20%;
+    color: #909090;
+    font-family: 'Courier New', Courier, monospace;
+}
+
