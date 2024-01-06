@@ -1,0 +1,127 @@
+@media (max-width:1200px){
+     .main{
+        height: 1700px;
+        width: 900px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+     }
+    .about-container{
+        margin-top: -20px;
+
+    }
+    
+    #profileimg{
+        margin: 30px;
+        border-radius: 20px;
+    }
+
+    #aside-image-container {
+        display: none;
+    }
+    
+    .floating-side{
+        /* border: 1px solid red; */
+        width: 900px;
+        height: 200px;  
+        display: flex;
+        border-radius: 25px;
+        align-items: center;
+        justify-content: flex-start;
+        border: 1px solid;
+
+     }
+
+}
+
+
+@media (max-width:900px){
+       .about-container{
+        width: 700px;
+        height: 1550px;
+        transition: width 0.4s ease,;
+      }
+
+      body{
+        height: 2300px;
+      }
+
+      .main{
+        height: 1900px;
+        width: 700px;
+      }
+
+      .what-im-doing{
+        /* border: 1px solid; */
+        height: 700px;
+      }
+     
+      .floating-side {
+        width: 700px;
+        transition: width 0.4s ease;
+      }
+
+    .about-me, .aboutme-head, .hr{
+        width: 680px;
+    }
+      .aboutme-content{
+        width: 650px;
+      }
+      
+    .what-im-doing{
+       width: 700px;
+    }
+
+    .doing-header{
+      width: 680px;
+      
+    }
+    .doing-items-container{
+        /* border: 1px solid red; */
+        width: 700px;
+        height: 600px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .doing-items-box{
+        width: 670px;
+        height: 120px ;
+    }
+    .doing-items-content{
+        width: 600px;
+        height: 150px;
+    }
+
+    .testimonials{
+        width: 700px;
+        height: 850px;
+        /* border: 1px solid greenyellow; */
+          border-bottom: 1px solid;
+          border-left: 1px solid;
+          border-right: 1px solid;
+          border-bottom-left-radius: 25px;
+          border-bottom-right-radius: 25px;
+    }
+    .testimonials-header{
+        width: 680px;
+    }
+    
+    .testimonials-container{
+        /* border: 2px solid red; */
+        height:700px;
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+      
+    }
+    .testimonials-box{
+        width: 600px;
+    }
+
+
+    }
