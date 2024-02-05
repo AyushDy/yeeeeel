@@ -190,4 +190,3 @@ dropDown.addEventListener('change',function(event){
 paginationButtons();
 showItems();
 
-const boxes = document.querySelectorAll()
