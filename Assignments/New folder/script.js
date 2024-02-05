@@ -1,185 +1,112 @@
 
 
-let itemsPerPage=  5;
-let currentPageNo= 1;
-let totalItems=190;
-
-const pageList = document.querySelector('.list');
-const dropDown = document.querySelector('.list2');
-
-const dummyData= [];
-
-
-for(let i=0;i<totalItems;i++){
-    dummyData.push({
-        Name : `Student ${i+1}`,
-        RollNo : i+1,
-    })
-};
-
-
-let pageCnt= Math.ceil(totalItems/itemsPerPage);
-
-function showItems(){
-    const itemsContainer= document.querySelector('.container');
-    itemsContainer.innerHTML='';
-
-    const firstItem= (currentPageNo-1)* itemsPerPage;
-    const displayedArray= dummyData.slice(firstItem,firstItem+itemsPerPage);
-
-    const itemsList= document.createElement('ul');
-    for(let i=0;i<displayedArray.length;i++){
-        const item= document.createElement('li');
-        item.innerHTML=`Name :${displayedArray[i].Name}<br> Roll No.:${displayedArray[i].RollNo}`;
-        itemsList.appendChild(item);
+    body{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0;
     }
-    itemsContainer.appendChild(itemsList);
-};
-
-function paginationButtons(){
-    pageList.innerHTML='';
-
-    addGotoFirst();
-    addLeft();
-
-    if(currentPageNo>=pageCnt/2){
-        addBox(1);
-        addBox(2);
-        addDotBox();
+    .container{
+        display: flex;
+        flex-direction: column;
     }
 
-    const start= (1<currentPageNo-2)?currentPageNo-2:1;
-    const end= (pageCnt>currentPageNo+2)?currentPageNo+2:pageCnt;
-
-    for(let i=start; i<=end;i++){
-        const pageButton = document.createElement('div');
-        pageButton.classList.add('page-box');
-        if(i==currentPageNo){
-            pageButton.classList.add('active');
-        }
-        pageButton.innerHTML=i;
-        pageList.appendChild(pageButton);
-}
-
-if(currentPageNo<=pageCnt/2){
-    addDotBox();
-    addBox(pageCnt-1);
-    addBox(pageCnt);
-}
-
-addRight();
-addGotoLast();
-
-const pages= document.querySelectorAll('.page-box');
-
-for(let i=0;i<pages.length;i++){
-    pages[i].addEventListener('click',function(){
-        currentPageNo=parseInt(pages[i].innerHTML);
-        paginationButtons();
-        showItems();
-    })
-}}
-
-function addBox(pageNo){
-    const tempBox= document.createElement('div');
-    tempBox.classList.add('page-box');
-    tempBox.innerHTML=pageNo;
-    pageList.appendChild(tempBox);
-}
-
-function addLeft(){
-    const leftButton= document.createElement('div');
-    leftButton.classList.add('box','left');
-    leftButton.innerHTML='<';
-    pageList.appendChild(leftButton);
-
-    if(currentPageNo==1){
-        leftButton.classList.add('inactive');
-    }else{
-        leftButton.classList.remove('inactive');
+    #pageNo-List{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 70vw;
+        /* border: 1px solid; */
     }
 
-    leftButton.addEventListener('click',function(){
-    if(currentPageNo>1){
-      currentPageNo--;
-      paginationButtons();
-      showItems();
+    ul{
+        width: 85vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+        /* border: 1px solid; */
     }
-});
-}
-
-function addRight(){
-    const rightButton= document.createElement('div');
-    rightButton.classList.add('box','right');
-    rightButton.innerHTML='>';
-    pageList.appendChild(rightButton);
-
-    if(currentPageNo==pageCnt){
-        rightButton.classList.add('inactive');
-    }else{
-        rightButton.classList.remove('inactive');
-    }
-
-    rightButton.addEventListener('click',function(){
-    if(currentPageNo<pageCnt){
-      currentPageNo++;
-      paginationButtons();
-      showItems();
-    }
-});
-}
-
-function addDotBox(){
-    const dotBox= document.createElement('div');
-    dotBox.classList.add('box');
-    dotBox.innerHTML='...';
-    pageList.appendChild(dotBox);
-}
-
-function addGotoFirst(){
-    const gotoFirst= document.createElement('div');
-    gotoFirst.classList.add('box','first');
-    gotoFirst.innerHTML='<<';
-    pageList.appendChild(gotoFirst);
-
-    gotoFirst.addEventListener('click', function(){
-        currentPageNo=1;
-        paginationButtons();
-        showItems();
-    })
-}
-
-function addGotoLast(){
-    const gotoLast= document.createElement('div');
-    gotoLast.classList.add('box','first');
-    gotoLast.innerHTML='>>';
-    pageList.appendChild(gotoLast);
-
-    gotoLast.addEventListener('click',function(){
-        currentPageNo=pageCnt;
-        paginationButtons();
-        showItems();
-    })
-}
-
-dropDown.addEventListener('change',function(event){
-    itemsPerPage= parseInt(dropDown.value);
-    pageCnt= Math.ceil(totalItems/itemsPerPage);
-    paginationButtons();
-    showItems();
     
+    .page-box,.box{
+        width: 30px;
+        height: 30px;
+        box-shadow: 0 0 3px gray;
+        margin: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 5px;
+    }
 
-})
 
 
+    li{
+        box-shadow: 0 0 3px gray;
+        border-radius: 6px;
+        margin: 4px;
+        color: rgb(0, 0, 0);
+        padding: 3px;
+        background-color:  rgb(255, 190, 221);
+    }
+
+    .active{
+        background-color: rgb(255, 47, 148);
+        color: white;
+    }
+
+    .box:hover,.page-box:hover{
+        background-color:rgb(255, 176, 214) ;
+        box-shadow: 0 0 6px rgb(255, 198, 238);
+    }
+
+    .inactive{
+        background-color: rgb(199, 199, 199);
+        color: white;
+    }
+
+    .list >.inactive:hover{
+        background-color: rgb(199, 199, 199);
+        color: white;
+        box-shadow: 0 0 3px gray;
+        cursor: default;
+    }
 
 
+    .first:hover{
+        background-color:rgb(255, 176, 214) ;
+        
+        box-shadow: 0 0 6px rgb(197, 197, 197);
+    }
 
+    select {
+    padding: 3px;
+    box-shadow: 0 0 2px rgb(158, 158, 158);
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+}
 
+select option:checked {
+    background-color: #ff9dd1; 
+    color: #ffffff; 
 
+}
 
-paginationButtons();
-showItems();
+select::-webkit-scrollbar{
+    width: 15px;
+}
 
-const boxes = document.querySelectorAll()
+select::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 14, 147);
+    border-radius: 5px;
+}
+
+select::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
 
